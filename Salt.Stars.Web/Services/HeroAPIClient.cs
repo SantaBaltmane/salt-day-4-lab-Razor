@@ -23,7 +23,7 @@ namespace Salt.Stars.Web.Services
         private string createHeroesUrl()
         {
             var baseUrlForApi = _configuration["ApiBaseUrl"];
-            return $"{baseUrlForApi}/Heroes";
+            return $"{baseUrlForApi}/HeroesPage";
         }
 
         public async Task<HeroResponse> GetHero(int id)
