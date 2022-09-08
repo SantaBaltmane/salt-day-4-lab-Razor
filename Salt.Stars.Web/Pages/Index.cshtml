@@ -1,0 +1,40 @@
+﻿@page
+@model IndexPage
+
+@if (@Model.ErrorMessage != null)
+{
+   <h2>No greeting found</h2>
+   <small>@Model.ErrorMessage</small>
+}
+else
+{
+    ViewData["Title"] = "Start";
+
+    <div class="text-center">
+        <h2 class="display-5" id="mainHeader">Get your greeting below</h2>
+        <hr />
+
+        <div class="card">
+            @if (Model.Greeting != null){
+            <div class="card-header" id="greeting">
+                Greetings, @Model.Greeting.Name
+            </div>
+
+            <div class="card-body">
+                <blockquote class="blockquote">
+                    <p class="mb-0">@Model.Greeting.Greeting</p>
+                    <footer class="blockquote-footer">From the API at <cite title="@Model.Greeting.GreetedAt">@Model.Greeting.GreetedAt</cite></footer>
+                </blockquote>
+            </div>
+            }
+
+            <div class="card-footer">
+                <form method="get" class="input-group mb-3">
+                    <input type="text" asp-for="DeveloperName" class="form-control mr-3" />
+                    <input type="submit" value="Get greeting" class="btn btn-primary" />
+                </form>
+            </div>
+        </div>
+    </div>
+
+}

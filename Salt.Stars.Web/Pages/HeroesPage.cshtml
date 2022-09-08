@@ -1,0 +1,24 @@
+@page
+@model Salt.Stars.Web.Pages.HeroesPage
+
+
+@{
+
+  ViewData["Title"] = "List of Heroes";
+}
+
+<div class="text-center">
+  <h1>List of Heroes</h1>
+  <div>
+    <ul>
+    @{
+      string[] listOfHeroes = {"hero1", "hero2"};
+      foreach(var hero in listOfHeroes)
+      {
+        <li>hero</li>
+      }
+    }
+  </ul>
+</div>
+</div>
+
